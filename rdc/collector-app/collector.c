@@ -14,7 +14,7 @@
 #define MQTT_BROKER_IP "127.0.0.1"
 #define MQTT_PORT 1883
 #define MQTT_TOPIC "Sensor1/temp"
-#define SAMPLE_RATE_HZ 2
+#define SAMPLE_RATE_HZ 1
 #define MEASURE_SLEEP_MS 20
 
 
@@ -98,7 +98,7 @@ int main(void){
         return 3;
     }
 
-    mosquitto_reconnect_delay_set(m_client, 1, 60, true);
+    mosquitto_reconnect_delay_set(m_client, 1, 15, false);
     mosquitto_connect_async(m_client, MQTT_BROKER_IP, MQTT_PORT, 60);
     mosquitto_loop_start(m_client);
 
