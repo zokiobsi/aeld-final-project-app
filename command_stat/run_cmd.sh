@@ -19,3 +19,6 @@ EOF
 
 mosquitto -v -c /tmp/bridge.conf
 
+#Python Foxglove-broker bridge startup
+source /home/josh/workspace/aesd_final/.venv/bin/activate
+python3 /home/josh/workspace/aesd_final/foxglove_mqtt_client.py
